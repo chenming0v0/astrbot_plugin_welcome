@@ -1,0 +1,5 @@
+name: "群欢迎"
+desc: "新人入群自动发送欢迎消息，支持为不同群设置不同的欢迎语"
+version: "v1.0"
+author: "chengming0v0"
+repo: ""

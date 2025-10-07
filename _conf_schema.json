@@ -1,0 +1,8 @@
+{
+  "default_message": {
+    "description": "默认欢迎消息",
+    "type": "text",
+    "hint": "当群聊未设置自定义欢迎语时使用的默认消息",
+    "default": "欢迎新人~"
+  }
+}
