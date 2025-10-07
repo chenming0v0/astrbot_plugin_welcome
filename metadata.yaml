@@ -1,5 +1,5 @@
-name: "群欢迎"
+name: "简单欢迎入群"
 desc: "新人入群自动发送欢迎消息，支持为不同群设置不同的欢迎语"
 version: "v1.0"
 author: "chengming0v0"
-repo: ""
+repo: "https://github.com/chenming0v0/astrbot_plugin_welcome"

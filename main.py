@@ -106,12 +106,17 @@ class WelcomePlugin(Star):
 
     @filter.command("设置欢迎")
     async def set_welcome(self, event: AiocqhttpMessageEvent, message: str) -> AsyncGenerator[MessageEventResult, None]:
-        """设置本群欢迎语: /设置欢迎 欢迎内容"""
+        """设置本群欢迎语: /设置欢迎 欢迎内容（仅Bot管理员）"""
         try:
             # 检查是否为群聊
             group_id = event.get_group_id()
             if not group_id:
                 yield event.plain_result("此命令仅在群聊中可用")
+                return
+            
+            # 检查权限：只允许Bot管理员
+            if event.role != "admin":
+                yield event.plain_result("抱歉，你的权限不足")
                 return
             
             # 检查欢迎语是否为空
@@ -138,6 +143,11 @@ class WelcomePlugin(Star):
             group_id = event.get_group_id()
             if not group_id:
                 yield event.plain_result("此命令仅在群聊中可用")
+                return
+            
+            # 检查权限：只允许Bot管理员
+            if event.role != "admin":
+                yield event.plain_result("抱歉，你的权限不足")
                 return
             
             # 获取当前欢迎语
